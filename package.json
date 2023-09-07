@@ -1,0 +1,42 @@
+{
+  "name": "serverless-strapi-4-guide",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "pg": "^8.11.3",
+    "serverless": "^3.34.0",
+    "serverless-esbuild": "^1.46.0",
+    "serverless-http": "^3.2.0",
+    "serverless-offline": "^12.0.4"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.13.3",
+    "@strapi/plugin-users-permissions": "4.13.3",
+    "@strapi/strapi": "4.13.3",
+    "better-sqlite3": "8.5.0",
+    "winston": "3.10.0",
+    "@strapi/plugin-content-manager": "4.13.3",
+    "@strapi/plugin-content-type-builder": "4.13.3",
+    "@strapi/plugin-email": "4.13.3",
+    "@strapi/plugin-upload": "4.13.3",
+    "sharp": "0.32.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "60b717fc-0ace-443a-9e7c-8e0eb1d87e55"
+  },
+  "engines": {
+    "node": ">=16.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
