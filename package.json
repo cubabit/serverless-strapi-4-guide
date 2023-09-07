@@ -7,9 +7,11 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
+    "patch-package": "^8.0.0",
     "pg": "^8.11.3",
     "serverless": "^3.34.0",
     "serverless-esbuild": "^1.46.0",
@@ -17,16 +19,16 @@
     "serverless-offline": "^12.0.4"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.13.3",
-    "@strapi/plugin-users-permissions": "4.13.3",
-    "@strapi/strapi": "4.13.3",
-    "better-sqlite3": "8.5.0",
-    "winston": "3.10.0",
     "@strapi/plugin-content-manager": "4.13.3",
     "@strapi/plugin-content-type-builder": "4.13.3",
     "@strapi/plugin-email": "4.13.3",
+    "@strapi/plugin-i18n": "4.13.3",
     "@strapi/plugin-upload": "4.13.3",
-    "sharp": "0.32.0"
+    "@strapi/plugin-users-permissions": "4.13.3",
+    "@strapi/strapi": "4.13.3",
+    "better-sqlite3": "8.5.0",
+    "sharp": "0.32.0",
+    "winston": "3.10.0"
   },
   "author": {
     "name": "A Strapi developer"

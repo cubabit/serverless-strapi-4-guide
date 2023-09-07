@@ -1,0 +1,13 @@
+diff --git a/node_modules/serverless-esbuild/dist/pack.js b/node_modules/serverless-esbuild/dist/pack.js
+index 677835f..7d054d9 100644
+--- a/node_modules/serverless-esbuild/dist/pack.js
++++ b/node_modules/serverless-esbuild/dist/pack.js
+@@ -32,7 +32,7 @@ function setFunctionArtifactPath(func, artifactPath) {
+         };
+     }
+ }
+-const excludedFilesDefault = ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', 'package.json'];
++const excludedFilesDefault = ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock'];
+ const filterFilesForZipPackage = ({ files, functionAlias, includedFiles, excludedFiles, hasExternals, isGoogleProvider, depWhiteList, }) => {
+     return files.filter(({ localPath }) => {
+         // if file is present in patterns it must be included
