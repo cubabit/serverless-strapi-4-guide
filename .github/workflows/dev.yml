@@ -20,3 +20,33 @@ jobs:
 
       - name: Build and test app
         run: yarn build
+
+  deploy:
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      APP_KEYS: ${{ secrets.APP_KEYS }}
+      API_TOKEN_SALT: ${{ secrets.API_TOKEN_SALT }}
+      ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      SERVER_URL: ${{ secrets.SERVER_URL }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+      DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+    name: Deply staging
+    needs: build
+    environment: Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout6644e2jk
+        uses: actions/checkout@master
+
+      - name: Yarn setup
+        uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 16
+
+      - name: Build and test app
+        run: yarn serverless deploy
