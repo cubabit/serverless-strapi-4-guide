@@ -14,14 +14,15 @@ provider:
 
   vpc:
     securityGroupIds:
-      - sg-a25016d8
+      - sg-4916f333
       - sg-f3c7dc88
+      - sg-26cad15d
     subnetIds:
       - subnet-08cb2640
       - subnet-ac93c9f7
 
   memorySize: 2048
-  timeout: 30
+  timeout: 15
 
   environment:
     APP_KEYS: ${env:APP_KEYS}
@@ -40,6 +41,10 @@ package:
   patterns:
     - package.json
     - src/resources/
+    - public
+    - build
+    - config
+    - database
 
 functions:
   api:
@@ -54,22 +59,15 @@ plugins:
 custom:
   esbuild:
     external:
-#       - aws-sdk
-#       - better-sqlite3
-#       - mariasql
-#       - mssql
       - mysql
       - mysql2
-#       - oracle
       - oracledb
       - pg-query-stream
       - sqlite3
-#       - strong-oracle
       - tedious
       - sequelize
       - redis
       - mongoose
-#       - winston
       - "@strapi/plugin-content-manager"
       - "@strapi/plugin-content-type-builder"
       - "@strapi/plugin-email"

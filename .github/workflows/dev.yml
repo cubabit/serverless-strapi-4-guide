@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 16
 
-      - name: Build and test app
+      - name: Build
         run: yarn build
 
   deploy:
@@ -40,7 +40,7 @@ jobs:
     environment: Staging
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout6644e2jk
+      - name: Checkout
         uses: actions/checkout@master
 
       - name: Yarn setup
@@ -48,5 +48,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: Build and test app
-        run: yarn serverless deploy
+      - name: Deploy
+        run: |
+          yarn build
+          mkdir -p public/uploads
+          touch public/uploads/keep
+          mkdir -p database/migrations
+          touch database/migrations/keep
+          yarn serverless deploy

@@ -32,7 +32,8 @@
         "DATABASE_PASSWORD": "ruuby",
         "DATABASE_USERNAME": "ruuby",
         "DATABASE_NAME": "strapi4",
-        "DATABASE_HOST": "10.1.0.100"
+        "DATABASE_HOST": "10.1.0.100",
+        "DATABASE_PORT": "15432"
       },
       "stage": "dev",
       "deploymentBucketObject": {
@@ -146,7 +147,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "ruuby-test-deployment",
-                "S3Key": "serverless/strapi-4-serverless-guide/dev/1694103914273-2023-09-07T16:25:14.273Z/strapi-4-serverless-guide.zip"
+                "S3Key": "serverless/strapi-4-serverless-guide/dev/1694112483457-2023-09-07T18:48:03.457Z/strapi-4-serverless-guide.zip"
               },
               "Handler": "src/app.strapiHandler",
               "Runtime": "nodejs16.x",
@@ -163,7 +164,8 @@
                   "DATABASE_PASSWORD": "ruuby",
                   "DATABASE_USERNAME": "ruuby",
                   "DATABASE_NAME": "strapi4",
-                  "DATABASE_HOST": "10.1.0.100"
+                  "DATABASE_HOST": "10.1.0.100",
+                  "DATABASE_PORT": "15432"
                 }
               },
               "Role": {
@@ -375,7 +377,8 @@
       "package": {
         "patterns": [
           "package.json",
-          "src/resources/"
+          "src/resources/",
+          "public"
         ],
         "artifactsS3KeyDirname": "serverless/strapi-4-serverless-guide/dev/code-artifacts",
         "deploymentBucket": "ruuby-test-deployment"
@@ -394,7 +397,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/strapi-4-serverless-guide/dev/1694103914273-2023-09-07T16:25:14.273Z",
+    "artifactDirectoryName": "serverless/strapi-4-serverless-guide/dev/1694112483457-2023-09-07T18:48:03.457Z",
     "artifact": "strapi-4-serverless-guide.zip"
   }
 }
