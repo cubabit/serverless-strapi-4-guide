@@ -1,0 +1,22 @@
+name: Dev
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build Javascript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Yarn setup
+        uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 16
+
+      - name: Build and test app
+        run: yarn build
