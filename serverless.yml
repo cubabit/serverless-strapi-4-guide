@@ -6,8 +6,7 @@ useDotenv: true
 provider:
   name: aws
   runtime: nodejs16.x
-  region: eu-west-1 # NOTE: Update to your region
-  profile: strapi-serverless-admin # NOTE: Update to your profile name as in ~/.aws/credentials
+  region: eu-west-1
   logRetentionInDays: 1
   versionFunctions: false
 
