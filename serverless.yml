@@ -7,22 +7,12 @@ provider:
   name: aws
   runtime: nodejs16.x
   region: eu-west-1 # NOTE: Update to your region
+  profile: strapi-serverless-admin # NOTE: Update to your profile name as in ~/.aws/credentials
   logRetentionInDays: 1
   versionFunctions: false
-  deploymentBucket:
-    name: ruuby-test-deployment
-
-  vpc:
-    securityGroupIds:
-      - sg-4916f333
-      - sg-f3c7dc88
-      - sg-26cad15d
-    subnetIds:
-      - subnet-08cb2640
-      - subnet-ac93c9f7
 
   memorySize: 2048
-  timeout: 15
+  timeout: 30
 
   environment:
     APP_KEYS: ${env:APP_KEYS}
@@ -35,16 +25,28 @@ provider:
     DATABASE_USERNAME: ${env:DATABASE_USERNAME}
     DATABASE_NAME: ${env:DATABASE_NAME}
     DATABASE_HOST: ${env:DATABASE_HOST}
-    DATABASE_PORT: ${env:DATABASE_PORT}
 
 package:
-  patterns:
-    - package.json
-    - src/resources/
-    - public
-    - build
-    - config
-    - database
+  excludeDevDependencies: true
+  exclude:
+    - "**"
+  include:
+    - "config/**"
+    - "database/**"
+    - "node_modules/**"
+    - "public/**"
+    - "src/**"
+    - ".env.example"
+    - "package.json"
+    - "!node_modules/esbuild-linux-64/**"
+    - "!node_modules/@babel/**"
+    - "!node_modules/@types/**"
+    - "!node_modules/webpack/**"
+    - "!node_modules/@sentry/**"
+    - "!node_modules/@aws-sdk/**"
+    - "!node_modules/aws-sdk/**"
+    - "!node_modules/typescript/**"
+    - "!node_modules/react*/**"
 
 functions:
   api:
@@ -54,21 +56,3 @@ functions:
 
 plugins:
   - serverless-offline
-  - serverless-esbuild
-
-custom:
-  esbuild:
-    external:
-      - mysql
-      - mysql2
-      - oracledb
-      - pg-query-stream
-      - sqlite3
-      - tedious
-      - sequelize
-      - redis
-      - mongoose
-      - "@strapi/plugin-content-manager"
-      - "@strapi/plugin-content-type-builder"
-      - "@strapi/plugin-email"
-      - "@strapi/plugin-upload"
