@@ -1,3 +1,15 @@
+diff --git a/node_modules/@strapi/strapi/lib/index.js b/node_modules/@strapi/strapi/lib/index.js
+index 0c7a6af..db23653 100644
+--- a/node_modules/@strapi/strapi/lib/index.js
++++ b/node_modules/@strapi/strapi/lib/index.js
+@@ -3,6 +3,6 @@
+ const Strapi = require('./Strapi');
+ 
+ Strapi.factories = require('./factories');
+-Strapi.compile = require('./compile');
++// Strapi.compile = require('./compile');
+ 
+ module.exports = Strapi;
 diff --git a/node_modules/@strapi/strapi/lib/services/metrics/sender.js b/node_modules/@strapi/strapi/lib/services/metrics/sender.js
 index a5123ff..e2609a7 100644
 --- a/node_modules/@strapi/strapi/lib/services/metrics/sender.js

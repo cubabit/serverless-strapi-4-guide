@@ -1,0 +1,48 @@
+diff --git a/node_modules/@strapi/admin/index.js b/node_modules/@strapi/admin/index.js
+index 0bbcabb..8275347 100644
+--- a/node_modules/@strapi/admin/index.js
++++ b/node_modules/@strapi/admin/index.js
+@@ -4,7 +4,7 @@ const path = require('path');
+ const fs = require('fs-extra');
+ const webpack = require('webpack');
+ const WebpackDevServer = require('webpack-dev-server');
+-const { isUsingTypeScript } = require('@strapi/typescript-utils');
++const isUsingTypeScript = () => false;
+ const chalk = require('chalk');
+ 
+ const {
+diff --git a/node_modules/@strapi/admin/server/controllers/admin.js b/node_modules/@strapi/admin/server/controllers/admin.js
+index 201a0f1..8d1eb93 100644
+--- a/node_modules/@strapi/admin/server/controllers/admin.js
++++ b/node_modules/@strapi/admin/server/controllers/admin.js
+@@ -6,7 +6,7 @@ const { map, values, sumBy, pipe, flatMap, propEq } = require('lodash/fp');
+ const _ = require('lodash');
+ const { exists } = require('fs-extra');
+ const { env } = require('@strapi/utils');
+-const { isUsingTypeScript } = require('@strapi/typescript-utils');
++const isUsingTypeScript = () => false;
+ // eslint-disable-next-line node/no-extraneous-require
+ const ee = require('@strapi/strapi/lib/utils/ee');
+ 
+diff --git a/node_modules/@strapi/admin/utils/get-custom-app-config-file.js b/node_modules/@strapi/admin/utils/get-custom-app-config-file.js
+index ffa5015..a31c89e 100644
+--- a/node_modules/@strapi/admin/utils/get-custom-app-config-file.js
++++ b/node_modules/@strapi/admin/utils/get-custom-app-config-file.js
+@@ -2,7 +2,7 @@
+ 
+ const { join } = require('path');
+ const fse = require('fs-extra');
+-const { isUsingTypeScript } = require('@strapi/typescript-utils');
++const isUsingTypeScript = () => false;
+ 
+ /**
+  * Retrieve the custom admin entry file name
+@@ -16,7 +16,7 @@ const getCustomAppConfigFile = async (dir) => {
+     return undefined;
+   }
+ 
+-  const useTypeScript = await isUsingTypeScript(adminSrcPath, 'tsconfig.json');
++  const useTypeScript = awaiisUsingTypeScript = () => false;
+ 
+   const files = await fse.readdir(adminSrcPath);
+ 

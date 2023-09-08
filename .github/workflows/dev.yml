@@ -60,4 +60,5 @@ jobs:
 
       - name: Deploy
         run: |
+          yarn patch-package
           yarn serverless deploy
