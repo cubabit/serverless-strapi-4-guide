@@ -9,6 +9,7 @@ jobs:
   build:
     name: Build Javascript
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -20,6 +21,11 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          path: build
 
   deploy:
     env:
@@ -39,6 +45,7 @@ jobs:
     needs: build
     environment: Staging
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -48,11 +55,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+
       - name: Deploy
         run: |
-          yarn build
-          mkdir -p public/uploads
-          touch public/uploads/keep
-          mkdir -p database/migrations
-          touch database/migrations/keep
           yarn serverless deploy
