@@ -1,0 +1,13 @@
+diff --git a/node_modules/@strapi/strapi/lib/services/metrics/sender.js b/node_modules/@strapi/strapi/lib/services/metrics/sender.js
+index a5123ff..e2609a7 100644
+--- a/node_modules/@strapi/strapi/lib/services/metrics/sender.js
++++ b/node_modules/@strapi/strapi/lib/services/metrics/sender.js
+@@ -5,7 +5,7 @@ const path = require('path');
+ const _ = require('lodash');
+ const isDocker = require('is-docker');
+ const ciEnv = require('ci-info');
+-const { isUsingTypeScriptSync } = require('@strapi/typescript-utils');
++const isUsingTypeScriptSync = () => false;
+ const { env } = require('@strapi/utils');
+ const machineID = require('../../utils/machine-id');
+ const { generateAdminUserHash } = require('./admin-user-hash');

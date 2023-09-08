@@ -7,9 +7,11 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
+    "patch-package": "^8.0.0",
     "pg": "^8.11.3",
     "serverless": "^3.34.0",
     "serverless-esbuild": "^1.46.0",
