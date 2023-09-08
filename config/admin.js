@@ -5,7 +5,7 @@ const getUrl = () => {
   if (process.argv.join(" ").includes("strapi develop")) {
     return "admin";
   } else {
-    return "dev/admin";
+    return "admin";
   }
 };
 
