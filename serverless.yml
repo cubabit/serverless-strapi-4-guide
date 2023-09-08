@@ -27,9 +27,7 @@ provider:
 
 package:
   excludeDevDependencies: true
-  exclude:
-    - "**"
-  include:
+  patterns:
     - "config/**"
     - "database/**"
     - "node_modules/**"
@@ -46,6 +44,7 @@ package:
     - "!node_modules/aws-sdk/**"
     - "!node_modules/typescript/**"
     - "!node_modules/react*/**"
+    - "node_modules/@babel/runtime*/**"
 
 functions:
   api:
