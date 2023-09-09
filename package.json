@@ -11,12 +11,12 @@
   },
   "devDependencies": {
     "patch-package": "^8.0.0",
-    "pg": "^8.11.3",
     "serverless": "^3.34.0",
     "serverless-esbuild": "^1.46.0",
     "serverless-offline": "^12.0.4"
   },
   "dependencies": {
+    "pg": "^8.11.3",
     "@strapi/plugin-i18n": "4.13.3",
     "@strapi/plugin-users-permissions": "4.13.3",
     "@strapi/strapi": "4.13.3",
