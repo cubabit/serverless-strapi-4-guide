@@ -16,12 +16,11 @@ provider:
   vpc:
     securityGroupIds:
       - sg-4916f333
-      - sg-f3c7dc88
       - sg-26cad15d
     subnetIds:
       - subnet-08cb2640
       - subnet-ac93c9f7
-      
+
   environment:
     APP_KEYS: ${env:APP_KEYS}
     API_TOKEN_SALT: ${env:API_TOKEN_SALT}
@@ -33,6 +32,7 @@ provider:
     DATABASE_USERNAME: ${env:DATABASE_USERNAME}
     DATABASE_NAME: ${env:DATABASE_NAME}
     DATABASE_HOST: ${env:DATABASE_HOST}
+    DATABASE_PORT: ${env:DATABASE_PORT}
 
 package:
   excludeDevDependencies: true
